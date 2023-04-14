@@ -1,9 +1,8 @@
 #! /bin/bash
 
-PROJECT_NAME=$1
-PROJECT_DIR=$2
-TEMPLATE="/Users/mohdqasim/workspace/JavaScript/project-template"
-
+PROJECT_NAME=$1;
+PROJECT_DIR=$2;
+TEMPLATE="https://github.com/mohdqasim02/project-template.git";
 function kebab_to_camel() {
   local NAME=$1
   for CHAR in $(echo $NAME | grep -o "\-.")
@@ -15,7 +14,7 @@ function kebab_to_camel() {
 }
 
 function copy_dir() {
-  cp -R "$TEMPLATE" "$PROJECT_DIR/$PROJECT_NAME" 
+  git clone "$TEMPLATE" "$PROJECT_DIR/$PROJECT_NAME" 
 }
 
 function rename_files() {
