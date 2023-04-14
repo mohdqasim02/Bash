@@ -12,6 +12,7 @@ function test() {
     then 
       clear;
       $FILE_RUNNER $FILE_TO_EXECUTE;
+      echo $(date);
     fi
     PREVIOUS_MODIFIED_TIME=$CURRENT_MODIFIED_TIME;
     sleep 2;
