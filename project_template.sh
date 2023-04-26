@@ -3,6 +3,7 @@
 PROJECT_NAME=$1;
 PROJECT_DIR=$2;
 TEMPLATE="https://github.com/mohdqasim02/project-template.git";
+
 function kebab_to_camel() {
   local NAME=$1
   for CHAR in $(echo $NAME | grep -o "\-.")
@@ -15,6 +16,7 @@ function kebab_to_camel() {
 
 function copy_dir() {
   git clone "$TEMPLATE" "$PROJECT_DIR/$PROJECT_NAME" 
+  rm -rfd "$PROJECT_DIR/$PROJECT_NAME/.git"
 }
 
 function rename_files() {
